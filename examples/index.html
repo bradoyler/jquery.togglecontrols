@@ -10,7 +10,12 @@
       background-color:#ccc;
       border:1px inset #000;
     }
+    .panel {
+      padding:9px;
+      border:3px solid #ccc;
+    }
   </style>
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
 </head>
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -22,17 +27,20 @@
 </script>
 <body>
   <h1>ToggleControls Demo</h1>
-  <div>
-    <a href="#panel1" class="js-toggle" data-togglecontrols='{"selector":".panel1"}'>Toggle Panel 1</a>
+  <h2>
+    <a href="#panel1" class="js-toggle" data-togglecontrols='{"selector":".panel1"}'>Link Toggle Panel 1</a>
     <h2 class='panel panel1 is-hidden'>Panel 1</h2>
-  </div>
-  <div>
-    <a href="#panel2" class="js-toggle" data-togglecontrols='{"toggleClass":"is-hidden", "selector":".panel2"}'>Toggle Panel 2</a>
+  </h2>
+  <h2>
+    <button class="js-toggle" data-togglecontrols='{"toggleClass":"is-hidden", "selector":".panel2"}'>Button w/ icon
+        <i class='fa fa-star fa-lg'></i>
+        <span> <i class='fa fa-times fa-lg'></i> </span>
+    </button>
     <h2 class='panel panel2 is-hidden'>Panel 2</h2>
-  </div>
-  <!-- <div>
+  </h2>
+   <div>
     <a href="#all" class="js-toggle" data-togglecontrols='{"selector":".panel"}'>Toggle All</a>
-  </div> -->
+  </div>
 
 </body>
 </html>

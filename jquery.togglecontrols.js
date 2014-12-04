@@ -10,14 +10,23 @@
       toggleClass: 'is-open',
       targetActiveClass: 'is-active',
       eventName:'click',
-      selector:'.js-toggle'
+      selector:'.dialog'
     }, options);
 
     $($el).on(defaults.eventName, function(e){
       var controls = $(e.target).data('togglecontrols');
+      var targetEl = e.target;
+      if(!controls) {
+        controls = $(e.target.parentNode).data('togglecontrols');
+        targetEl = e.target.parentNode;
+        if(!controls) {
+          controls = $(e.target.parentNode.parentNode).data('togglecontrols');
+          targetEl = e.target.parentNode.parentNode;
+        }
+      }
       var vals = $.extend({}, defaults, controls);
       $(vals.selector).toggleClass(vals.toggleClass);
-      $(e.target).toggleClass(vals.targetActiveClass);
+      $(targetEl).toggleClass(vals.targetActiveClass);
     });
   };
 }(jQuery));
