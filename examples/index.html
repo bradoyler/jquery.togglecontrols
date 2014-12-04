@@ -8,6 +8,7 @@
     }
     .is-active {
       background-color:#ccc;
+      border:1px inset #000;
     }
   </style>
 </head>
@@ -15,12 +16,23 @@
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="../jquery.togglecontrols.js" type="text/javascript"></script>
 <script type="text/javascript">
-  $(function (){
-    $('.js-toggle').togglecontrols();
+  jQuery(function ($){
+    $('.js-toggle').togglecontrols({toggleClass: 'is-hidden'});
   });
 </script>
 <body>
-  <a href="#" class="js-toggle" data-togglecontrols='{"toggleClass":"is-hidden", "selector":".panel"}'>ToggleControl - Click Me</a>
-  <h1 class='panel is-hidden'>Panel</h1>
+  <h1>ToggleControls Demo</h1>
+  <div>
+    <a href="#panel1" class="js-toggle" data-togglecontrols='{"selector":".panel1"}'>Toggle Panel 1</a>
+    <h2 class='panel panel1 is-hidden'>Panel 1</h2>
+  </div>
+  <div>
+    <a href="#panel2" class="js-toggle" data-togglecontrols='{"toggleClass":"is-hidden", "selector":".panel2"}'>Toggle Panel 2</a>
+    <h2 class='panel panel2 is-hidden'>Panel 2</h2>
+  </div>
+  <!-- <div>
+    <a href="#all" class="js-toggle" data-togglecontrols='{"selector":".panel"}'>Toggle All</a>
+  </div> -->
+
 </body>
 </html>

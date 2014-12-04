@@ -9,24 +9,15 @@
     var defaults = $.extend({
       toggleClass: 'is-open',
       targetActiveClass: 'is-active',
-      eventName:'click'
+      eventName:'click',
+      selector:'.js-toggle'
     }, options);
 
     $($el).on(defaults.eventName, function(e){
       var controls = $(e.target).data('togglecontrols');
-
-      if(controls.toggleClass) {
-        $(controls.selector).toggleClass(controls.toggleClass);
-      } else {
-        $(controls.selector).toggleClass(defaults.toggleClass);
-      }
-
-      if(controls.targetActiveClass) {
-        $(e.target).toggleClass(controls.targetActiveClass);
-      } else {
-        $(e.target).toggleClass(defaults.targetActiveClass);
-      }
-
+      var vals = $.extend({}, defaults, controls);
+      $(vals.selector).toggleClass(vals.toggleClass);
+      $(e.target).toggleClass(vals.targetActiveClass);
     });
   };
 }(jQuery));
