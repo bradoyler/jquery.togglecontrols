@@ -1,6 +1,6 @@
-### ToggleControl - jQuery plugin to help with `$.toggleClass()`
+### toggleControls - jQuery plugin to help with `$.toggleClass()`
 
-#### [Demo](http://bradoyler.github.io/jquery-togglecontrols/examples/)
+#### [Demo](http://bradoyler.github.io/jquery.togglecontrols/examples/)
 
 #### Default Options
 ```js
