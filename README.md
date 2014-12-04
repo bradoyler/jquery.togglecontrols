@@ -1,16 +1,17 @@
-## ToggleControl - jQuery plugin to help with `$.toggleClass()`
+### ToggleControl - jQuery plugin to help with `$.toggleClass()`
 
 #### [Demo](http://bradoyler.github.io/jquery-togglecontrols/examples/)
 
-### Default Options
+#### Default Options
 ```js
 {
   toggleClass: 'is-open',
-  targetActiveClass: 'is-active'
+  targetActiveClass: 'is-active',
+  eventName:'click'
 }
 ```
 
-### Example
+#### Example
 
 ```html
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
