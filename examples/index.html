@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>toggleControls</title>
+  <style type="text/css">
+    .is-hidden {
+      display:none;
+    }
+    .is-active {
+      background-color:#ccc;
+    }
+  </style>
+</head>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="../index.js" type="text/javascript"></script>
+<script type="text/javascript">
+  $(function (){
+    $('.js-toggle').togglecontrols();
+  });
+</script>
+<body>
+  <a href="#" class="js-toggle" data-togglecontrols='{"toggleClass":"is-hidden", "selector":".panel"}'>ToggleControl - Click Me</a>
+  <h1 class='panel is-hidden'>Panel</h1>
+</body>
+</html>

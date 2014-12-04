@@ -1,0 +1,22 @@
+{
+  "name": "jquery.togglecontrols",
+  "version": "0.0.1",
+  "authors": [
+    "Brad Oyler <bradoyler@gmail.com>"
+  ],
+  "description": "toggleClass helper jquery plugin",
+  "main": "index.js",
+  "keywords": [
+    "jquery",
+    "toggle"
+  ],
+  "license": "MIT",
+  "homepage": "http://bradoyler.github.io/jquery.togglecontrols",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
