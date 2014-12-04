@@ -7,7 +7,7 @@
 
     var $el = $(this);
     var defaults = $.extend({
-      toggleClass: 'is-open',
+      toggleClass: 'is-hidden',
       targetActiveClass: 'is-active',
       eventName:'click',
       selector:'.dialog'

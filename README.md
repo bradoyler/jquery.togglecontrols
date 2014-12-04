@@ -5,9 +5,10 @@
 #### Default Options
 ```js
 {
-  toggleClass: 'is-open',
+  toggleClass: 'is-hidden',
   targetActiveClass: 'is-active',
-  eventName:'click'
+  eventName:'click',
+  selector:'.dialog'
 }
 ```
 
