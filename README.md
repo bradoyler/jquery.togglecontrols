@@ -15,7 +15,7 @@
 
 ```html
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="../build/jquery.togglecontrols.min.js"></script>
+<script src="../jquery.togglecontrols.js"></script>
 <script type="text/javascript">
   $(function (){
     $('.js-toggle').togglecontrols();

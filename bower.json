@@ -1,11 +1,11 @@
 {
   "name": "jquery.togglecontrols",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "authors": [
     "Brad Oyler <bradoyler@gmail.com>"
   ],
   "description": "toggleClass helper jquery plugin",
-  "main": "index.js",
+  "main": "jquery.togglecontrols.js",
   "keywords": [
     "jquery",
     "toggle"
