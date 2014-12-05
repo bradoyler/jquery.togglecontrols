@@ -10,23 +10,31 @@
       toggleClass: 'is-hidden',
       targetActiveClass: 'is-active',
       eventName:'click',
-      selector:'.dialog'
+      selector:'.dialog',
+      activeTarget:false
     }, options);
 
     $($el).on(defaults.eventName, function(e){
-      var controls = $(e.target).data('togglecontrols');
+      var data = $(e.target).data('togglecontrols');
       var targetEl = e.target;
-      if(!controls) {
-        controls = $(e.target.parentNode).data('togglecontrols');
+      if(!data) {
+        data = $(e.target.parentNode).data('togglecontrols');
         targetEl = e.target.parentNode;
-        if(!controls) {
-          controls = $(e.target.parentNode.parentNode).data('togglecontrols');
+        if(!data) {
+          data = $(e.target.parentNode.parentNode).data('togglecontrols');
           targetEl = e.target.parentNode.parentNode;
+          if(!data){
+            data={};
+            targetEl = e.target;
+          }
         }
       }
-      var vals = $.extend({}, defaults, controls);
-      $(vals.selector).toggleClass(vals.toggleClass);
-      $(targetEl).toggleClass(vals.targetActiveClass);
+      var controls = $.extend({}, defaults, data);
+      $(controls.selector).toggleClass(controls.toggleClass);
+
+      if(controls.activeTarget) {
+        $(targetEl).toggleClass(controls.targetActiveClass);
+      }
     });
   };
 }(jQuery));

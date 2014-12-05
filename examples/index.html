@@ -3,8 +3,16 @@
 <head>
   <title>toggleControls</title>
   <style type="text/css">
+    button {
+      height:30px;
+      width:200px;
+    }
     .is-hidden {
       display:none;
+    }
+    .is-highlighted {
+      display:block;
+      border:6px solid yellow !important;
     }
     .is-active {
       background-color:#ccc;
@@ -12,13 +20,17 @@
     }
     .panel {
       padding:9px;
-      border:3px solid #ccc;
+      border: 6px inset #ccc;
+    }
+    .dialog {
+      padding:9px;
+      border:3px dotted #ccc;
     }
   </style>
   <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
 </head>
 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"></script>
 <script src="../jquery.togglecontrols.js" type="text/javascript"></script>
 <script type="text/javascript">
   jQuery(function ($){
@@ -28,19 +40,34 @@
 <body>
   <h1>ToggleControls Demo</h1>
   <h2>
-    <a href="#panel1" class="js-toggle" data-togglecontrols='{"selector":".panel1"}'>Link Toggle Panel 1</a>
-    <h2 class='panel panel1 is-hidden'>Panel 1</h2>
+    <button class="js-toggle">Toggle (w/ defaults)</button>
+    <h2 class='dialog is-hidden'>Hello. This is a dialog.
+      <i class='js-toggle fa fa-times fa-lg'></i>
+    </h2>
   </h2>
   <h2>
-    <button class="js-toggle" data-togglecontrols='{"toggleClass":"is-hidden", "selector":".panel2"}'>Button w/ icon
-        <i class='fa fa-star fa-lg'></i>
-        <span> <i class='fa fa-times fa-lg'></i> </span>
+    <button class="js-toggle" data-togglecontrols='{"selector":".dialog1"}'>
+      Toggle (nested icons)
+      <i class='fa fa-star fa-lg'></i>
+      <span> <i class='fa fa-times fa-lg'></i> </span>
     </button>
-    <h2 class='panel panel2 is-hidden'>Panel 2</h2>
+    <h2 class='dialog1 is-hidden'>Dialog1 with some text.</h2>
   </h2>
-   <div>
+  <h2>
+    <button class="js-toggle" data-togglecontrols='{"selector":".dialog2","activeTarget":true}'>Active Toggle
+      <i class='fa fa-star fa-lg'></i>
+      <span> <i class='fa fa-times fa-lg'></i> </span>
+    </button>
+    <h2 class='dialog2 is-hidden'>Dialog2 with some text.</h2>
+  </h2>
+  <h2>
+    <button class="js-toggle" data-togglecontrols='{"toggleClass":"is-highlighted","activeTarget":true, "selector":".panel"}'>Active button Hightlight
+    </button>
+    <h2 class='panel'>Content Panel with some text.</h2>
+  </h2>
+  <!-- <div>
     <a href="#all" class="js-toggle" data-togglecontrols='{"selector":".panel"}'>Toggle All</a>
-  </div>
+  </div> -->
 
 </body>
 </html>
