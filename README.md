@@ -8,7 +8,8 @@
   toggleClass: 'is-hidden',
   targetActiveClass: 'is-active',
   eventName:'click',
-  selector:'.dialog'
+  selector:'.tc-dialog',
+  activeTarget:false
 }
 ```
 
