@@ -20,7 +20,7 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": "~2.1.1"
+    "jquery": "~1.11.0"
   },
   "devDependencies": {
     "font-awesome": "~4.2.0"
