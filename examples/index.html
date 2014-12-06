@@ -3,34 +3,14 @@
 <head>
   <title>toggleControls</title>
   <style type="text/css">
-    button {
-      margin-top:15px;
-      height:30px;
-      width:200px;
-    }
-    .demo {
-      border-bottom: 2px solid #eee;
-      height: 120px;
-    }
-    .is-hidden {
-      display:none;
-    }
-    .is-highlighted {
-      display:block;
-      border:6px solid yellow !important;
-    }
-    .is-active {
-      background-color:#ccc;
-      border:1px inset #000;
-    }
-    .panel {
-      padding:9px;
-      border: 6px inset #ccc;
-    }
-    .dialog {
-      padding:9px;
-      border:3px dotted #ccc;
-    }
+    button, .button { margin-top:15px; height:30px; width:200px;}
+    .demo { border-bottom: 2px solid #eee; height: 120px;}
+    .is-hidden {display:none;}
+    .highlight-yellow { border:6px solid yellow !important;}
+    .is-active { background-color:#ccc; border:1px inset #000;}
+    .panel { padding:9px; border: 6px inset #ccc;}
+    .dialog { padding:9px; border:3px dotted #ccc;}
+    pre { border:2px inset #ccc; background-color:#eee;}
   </style>
   <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 </head>
@@ -54,28 +34,61 @@
 </script>
 <body>
   <h1>ToggleControls <i class='fa fa-toggle-on'></i> Demo</h1>
+  <hr>
+  <h2>Toggle (w/ defaults)</h2>
+  <pre>
+    &lt;button class='js-toggle'&gt;Toggle (w/ defaults)&lt;/button&gt;
+
+    &lt;div class='tc-dialog is-hidden dialog'&gt;
+      Hello. This is a dialog.
+    &lt;i class='js-toggle fa fa-times fa-lg'&gt;&lt;/i&gt;
+    &lt;/div&gt;
+  </pre>
   <div class="demo">
-    <button class="js-toggle">Toggle (w/ defaults)</button>
-    <div class='tc-dialog is-hidden dialog'>Hello. This is a dialog.
+  <div>Try:</div>
+    <button class='js-toggle'>Toggle (w/ defaults)</button>
+    <div class='tc-dialog is-hidden dialog'>
+       Hello. This is a dialog.
       <i class='js-toggle fa fa-times fa-lg'></i>
     </div>
   </div>
+
+  <h2>Toggle button (w/ nested icons)</h2>
+  <pre>
+    &lt;button class='js-toggle' data-togglecontrols='{&quot;selector&quot;:&quot;.tc-dialog1&quot;}'&gt;
+    Toggle (nested icons)
+    &lt;i class='fa fa-star fa-lg'&gt;&lt;/i&gt;
+    &lt;span&gt; &lt;i class='fa fa-times fa-lg'&gt;&lt;/i&gt; &lt;/span&gt;
+    &lt;/button&gt;
+    &lt;div class='tc-dialog1 dialog is-hidden'&gt;Dialog1 with some text.&lt;/div&gt;
+  </pre>
   <div class="demo">
-    <button class="js-toggle" data-togglecontrols='{"selector":".tc-dialog1"}'>
+    <div>Try:</div>
+    <button class='js-toggle' data-togglecontrols='{"selector":".tc-dialog1"}'>
       Toggle (nested icons)
       <i class='fa fa-star fa-lg'></i>
       <span> <i class='fa fa-times fa-lg'></i> </span>
     </button>
     <div class='tc-dialog1 dialog is-hidden'>Dialog1 with some text.</div>
   </div>
+  <h2>Active Toggle icon (via font-awesome)</h2>
+  <pre>
+    &lt;i class='js-toggle fa fa-toggle-off fa-2x'
+    data-togglecontrols='{"selector":".tc-dialog2","activeTarget":true, "targetActiveClass":"fa-toggle-on fa-toggle-off"}'&gt;
+    &lt;/i&gt;
+    &lt;div class='tc-dialog2 dialog is-hidden'&gt;Dialog2 with some text.&lt;/div&gt;
+  </pre>
   <div class="demo">
-    <i class="js-toggle fa fa-toggle-off fa-2x" data-togglecontrols='{"selector":".tc-dialog2","activeTarget":true, "targetActiveClass":"fa-toggle-on fa-toggle-off"}'>
+    <div>Try:</div>
+    <i class='button js-toggle fa fa-toggle-off fa-2x' data-togglecontrols='{"selector":".tc-dialog2","activeTarget":true, "targetActiveClass":"fa-toggle-on fa-toggle-off"}'>
     </i>
     <div class='tc-dialog2 dialog is-hidden'>Dialog2 with some text.</div>
   </div>
+  <h2>Highlight with active toggle</h2>
   <div class="demo">
-    <button class="js-toggle " data-togglecontrols='{"toggleClass":"is-highlighted","activeTarget":true, "selector":".panel"}'>
-    Toggle Highlight
+    <div>Try:</div>
+    <button class='js-toggle' data-togglecontrols='{"toggleClass":"highlight-yellow","activeTarget":true, "selector":".panel"}'>
+      Toggle Highlight
     </button>
     <div class='panel'>Content Panel with some text.</div>
   </div>
