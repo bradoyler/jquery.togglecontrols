@@ -11,10 +11,14 @@
       targetActiveClass: 'is-active',
       eventName:'click',
       selector:'.tc-dialog',
+      preventDefault:false,
       activeTarget:false
     }, options);
 
     $($el).on(defaults.eventName, function(e){
+      if(defaults.preventDefault) {
+        e.preventDefault();
+      }
       var data = $(e.target).data('togglecontrols');
       var targetEl = e.target;
       if(!data) {
