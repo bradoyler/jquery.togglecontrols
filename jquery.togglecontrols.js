@@ -16,9 +16,7 @@
     }, options);
 
     $($el).on(defaults.eventName, function(e){
-      if(defaults.preventDefault) {
-        e.preventDefault();
-      }
+
       var data = $(e.target).data('togglecontrols');
       var targetEl = e.target;
       if(!data) {
@@ -35,6 +33,10 @@
       }
       var controls = $.extend({}, defaults, data);
       $(controls.selector).toggleClass(controls.toggleClass);
+      
+      if(controls.preventDefault) {
+        e.preventDefault();
+      }
 
       if(controls.activeTarget) {
         $(targetEl).toggleClass(controls.targetActiveClass);
@@ -42,3 +44,8 @@
     });
   };
 }(jQuery));
+
+// auto-run
+$(function(){
+  $('.js-toggle').togglecontrols(); 
+});
