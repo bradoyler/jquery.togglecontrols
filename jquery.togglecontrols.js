@@ -2,8 +2,15 @@
   // Example of togglecontrols:
   // $('.js-toggle').togglecontrols();
   // <a href="#" class="js-toggle" data-togglecontrols='{"toggleClass":"is-hidden hidden-xs", "selector":".panel"}'>
-
+  
+  $._jtoggle_selectors = [];
+  
   $.fn.togglecontrols = function(options) {
+    
+    if($._jtoggle_selectors.indexOf($(this).selector) > -1) { //prevent dup init for a given selector
+         return;
+    }
+    $._jtoggle_selectors.push($(this).selector);
 
     var $el = $(this);
     var defaults = $.extend({
